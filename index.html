@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ủng hộ Pín lấy vợ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <style>
+        /* Additional custom styles */
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cảm ơn vì đã ủng hộ Pín lấy vợ</h1>
+        <div class="image-container">
+            <img src="https://telegra.ph/file/9acdbb990d3902de31535.png" alt="Sample Image">
+        </div>
+        <h2>Đã được ủng hộ <span id="stats"></span> lần</h2>
+    </div>
+</body>
+
+
+<script>
+    var r = new XMLHttpRequest();
+    r.addEventListener('load', function() {
+        document.querySelector('#stats').innerText = JSON.parse(this.responseText).count
+    })
+    r.open('GET', 'https://goat.nhimmeo.cf/counter/' + encodeURIComponent(location.pathname) + '.json')
+    r.send()
+</script>
+
+<script data-goatcounter="https://goat.nhimmeo.cf/count" async src="https://umami.nhimmeo.cf/count.js" type="text/javascript"></script>
+
+</html>
